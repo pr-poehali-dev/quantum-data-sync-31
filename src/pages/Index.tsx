@@ -474,6 +474,168 @@ const Index = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-24 px-6 bg-background">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-center text-3xl sm:text-4xl font-black text-foreground uppercase mb-12">
+            Ответы на часто задаваемые вопросы
+          </h2>
+          <div className="space-y-0 border border-border rounded-2xl overflow-hidden divide-y divide-border">
+            {[
+              { q: "Какие функции входят в готовый интернет-магазин?", a: "В базовый пакет входят: каталог товаров, корзина, оформление заказа, личный кабинет покупателя, интеграция с платёжными системами, настройка доставки, SEO-оптимизация и административная панель на 1С-Битрикс." },
+              { q: "Какие преимущества у готового интернет-магазина?", a: "Основные преимущества — быстрый запуск (от 5 рабочих дней), фиксированная стоимость, проверенные технологии, готовый дизайн и полная техническая поддержка после сдачи проекта." },
+              { q: "Вы поможете с настройкой сайта?", a: "Да, мы передаём сайт с подробными видеоинструкциями и сопровождаем в течение гарантийного срока. Вы сможете самостоятельно добавлять товары, менять цены и управлять заказами." },
+              { q: "Сколько времени займёт разработка интернет-магазина?", a: "Тариф «Простой» — от 5 рабочих дней. «Базовый» — от 10 дней. «Настраиваемый» — от 20 дней. Сроки зависят от объёма каталога и дополнительных доработок." },
+              { q: "Какие характеристики у вашего сервера?", a: "Мы используем выделенные серверы с SSD-дисками, защитой от DDoS-атак, ежедневным резервным копированием и гарантией uptime 99.9%. Под нагрузку предоставляются дополнительные ресурсы." },
+              { q: "Мне нужен готовый бизнес в интернете, но я не хочу постоянно заниматься интернет-магазином. Могу я поручить это вам?", a: "Конечно! Мы предлагаем услугу полного сопровождения: наполнение каталога, обработка заказов, обновление контента, мониторинг и маркетинговое продвижение магазина." },
+              { q: "Какая гарантия на готовый интернет-магазин?", a: "На все работы предоставляется гарантия согласно выбранному тарифу: 3, 6 или 12 месяцев бесплатной технической поддержки. Все выявленные ошибки устраняются бесплатно." },
+            ].map((item, i) => (
+              <details key={i} className="group">
+                <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none hover:bg-card transition-colors">
+                  <div className="flex items-start gap-3">
+                    <span className="text-primary font-bold text-sm shrink-0 mt-0.5">{i + 1}.</span>
+                    <span className="text-foreground font-medium text-sm leading-snug uppercase tracking-wide">{item.q}</span>
+                  </div>
+                  <Icon name="ChevronDown" size={18} className="text-primary shrink-0 group-open:rotate-180 transition-transform duration-200" />
+                </summary>
+                <div className="px-6 pb-5 pt-0">
+                  <p className="text-muted-foreground text-sm leading-relaxed pl-6">{item.a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* REVIEWS */}
+      <section className="py-24 px-6 bg-gradient-to-br from-rose-900 via-red-900 to-slate-900">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-center text-3xl sm:text-4xl font-black text-white uppercase mb-12">Отзывы</h2>
+          <div className="relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Featured review with photo */}
+              <div className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur-sm">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-black text-lg shrink-0">
+                    МС
+                  </div>
+                  <div>
+                    <div className="text-white font-bold">Максим Сергеевич О.</div>
+                    <div className="text-white/60 text-xs mt-0.5">Владелец интернет-магазина</div>
+                    <div className="flex gap-0.5 mt-1">
+                      {[1,2,3,4,5].map(i => <Icon key={i} name="Star" size={12} className="text-yellow-400 fill-yellow-400" />)}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-white/85 text-sm leading-relaxed">
+                  Отличный результат! Команда разработчиков подошла к проекту очень профессионально. Сайт запустили точно в срок, всё работает отлично. Уже получаем первые заказы через интернет-магазин.
+                </p>
+                <div className="mt-4 pt-4 border-t border-white/10 text-white/40 text-xs">
+                  Главный редактор портала Облзапо
+                </div>
+              </div>
+              {/* Second review */}
+              <div className="bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur-sm">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-black text-lg shrink-0">
+                    АВ
+                  </div>
+                  <div>
+                    <div className="text-white font-bold">Анна Владимировна К.</div>
+                    <div className="text-white/60 text-xs mt-0.5">Директор магазина одежды</div>
+                    <div className="flex gap-0.5 mt-1">
+                      {[1,2,3,4,5].map(i => <Icon key={i} name="Star" size={12} className="text-yellow-400 fill-yellow-400" />)}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-white/85 text-sm leading-relaxed">
+                  Заказали интернет-магазин под ключ. Очень довольны результатом — удобная админка, быстро работает, легко добавлять товары самостоятельно. Рекомендуем всем!
+                </p>
+                <div className="mt-4 pt-4 border-t border-white/10 text-white/40 text-xs">
+                  Магазин женской одежды «Стиль»
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT FORM */}
+      <section className="py-24 px-6 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Contacts */}
+            <div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+                {[
+                  { icon: "Mail", label: "Email", value: "info@gotovyi.ru" },
+                  { icon: "Phone", label: "Телефон", value: "+7 495 415-49-70" },
+                  { icon: "MapPin", label: "Адрес", value: "300041, Тула, ул. Тула, д. 1" },
+                ].map(c => (
+                  <div key={c.label} className="flex flex-col gap-1">
+                    <div className="flex items-center gap-2 text-muted-foreground text-xs uppercase tracking-wide mb-1">
+                      <Icon name={c.icon} fallback="Info" size={14} className="text-primary" />
+                      {c.label}
+                    </div>
+                    <span className="text-foreground text-sm font-medium">{c.value}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="text-xs text-muted-foreground leading-relaxed space-y-2 border-t border-border pt-6">
+                <p>Общество с ограниченной ответственностью «АТС Групп»: ОГРН 1167154080694</p>
+                <p>ИНН 7106560420 / КПП 710601001</p>
+                <p>Р/с 40702810766540003626 ПАО «Сбербанк России» БИК 047003608</p>
+                <p>К/с 30101810200000000608 в ОТДЕЛЕНИЕ ТУЛА БАНКА РОССИЯ</p>
+                <p>Тел/факс: +7(495) 415-49-70 (многоканальный)</p>
+                <div className="flex items-center gap-4 pt-4">
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border">
+                    <Icon name="Shield" size={16} className="text-primary" />
+                    <span className="text-xs font-medium">Минцифры России</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border">
+                    <Icon name="Award" size={16} className="text-primary" />
+                    <span className="text-xs font-medium">Роспатент</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Form */}
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-black text-foreground mb-8 uppercase leading-tight">
+                Закажите консультацию по телефону
+              </h2>
+              <form className="space-y-4" onSubmit={e => e.preventDefault()}>
+                <div>
+                  <label className="block text-xs text-muted-foreground uppercase tracking-wide mb-1.5">Имя</label>
+                  <input
+                    type="text"
+                    placeholder="Ваше имя"
+                    className="w-full px-4 py-3 rounded-xl bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs text-muted-foreground uppercase tracking-wide mb-1.5">Телефон</label>
+                  <input
+                    type="tel"
+                    placeholder="+7 (___) ___-__-__"
+                    className="w-full px-4 py-3 rounded-xl bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-bold text-base hover:bg-primary/90 transition-all duration-200 shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-0.5 transform mt-2"
+                >
+                  Отправить
+                </button>
+                <p className="text-xs text-muted-foreground text-center pt-1">
+                  Нажимая «Отправить», вы соглашаетесь с политикой конфиденциальности
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer className="py-8 px-6 bg-card border-t border-border">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
