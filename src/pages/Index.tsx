@@ -57,6 +57,37 @@ const plans = [
   },
 ];
 
+const functions = [
+  { icon: "FileText", label: "Брифинг" },
+  { icon: "BarChart2", label: "Аналитика" },
+  { icon: "Calendar", label: "Планирование" },
+  { icon: "Layers", label: "Прототипирование" },
+  { icon: "Rocket", label: "Старт" },
+  { icon: "TestTube", label: "Тестирование" },
+  { icon: "Settings2", label: "Настройка сайта" },
+  { icon: "Globe", label: "Публикация сайта" },
+];
+
+const portfolioItems = [
+  { label: "Магазин электроники", color: "from-blue-600 to-blue-800" },
+  { label: "Одежда и аксессуары", color: "from-purple-600 to-purple-800" },
+  { label: "Строительные материалы", color: "from-orange-600 to-orange-800" },
+  { label: "Продукты питания", color: "from-green-600 to-green-800" },
+  { label: "Спортивные товары", color: "from-red-600 to-red-800" },
+  { label: "Детские товары", color: "from-pink-600 to-pink-800" },
+];
+
+const categories = [
+  { icon: "Tv", label: "Электроника" },
+  { icon: "Shirt", label: "Одежда" },
+  { icon: "Sofa", label: "Мебель" },
+  { icon: "Dumbbell", label: "Спорт" },
+  { icon: "Baby", label: "Детские товары" },
+  { icon: "Utensils", label: "Продукты" },
+  { icon: "Wrench", label: "Инструменты" },
+  { icon: "Gem", label: "Ювелирные" },
+];
+
 const individual = [
   "Установка CMS 1С-Битрикс с лицензией на 1-4 сайта или безлимит",
   "Уникальный дизайн с нуля под ваш брендинг",
@@ -241,6 +272,177 @@ const Index = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FUNCTIONS */}
+      <section className="py-24 px-6 bg-gradient-to-br from-cyan-500 via-sky-500 to-blue-600">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-center text-2xl sm:text-3xl font-black text-white uppercase mb-16 leading-tight">
+            Какие функции содержит готовое решение для создания портала:
+          </h2>
+          {/* Row 1 */}
+          <div className="flex flex-wrap justify-center items-center gap-0 mb-6">
+            {functions.slice(0, 4).map((fn, i) => (
+              <div key={fn.label} className="flex items-center">
+                <div className="flex flex-col items-center gap-2 px-4">
+                  <div className="w-16 h-16 rounded-2xl bg-white/20 border-2 border-white/40 flex items-center justify-center backdrop-blur-sm hover:bg-white/30 transition-colors">
+                    <Icon name={fn.icon} fallback="Settings" size={28} className="text-white" />
+                  </div>
+                  <span className="text-white text-xs font-semibold uppercase tracking-wide">{fn.label}</span>
+                </div>
+                {i < 3 && <div className="w-8 h-0.5 bg-white/50 mb-4 hidden sm:block" />}
+              </div>
+            ))}
+          </div>
+          {/* Row 2 reversed */}
+          <div className="flex flex-wrap justify-center items-center gap-0">
+            {functions.slice(4).reverse().map((fn, i) => (
+              <div key={fn.label} className="flex items-center">
+                <div className="flex flex-col items-center gap-2 px-4">
+                  <div className="w-16 h-16 rounded-2xl bg-white/20 border-2 border-white/40 flex items-center justify-center backdrop-blur-sm hover:bg-white/30 transition-colors">
+                    <Icon name={fn.icon} fallback="Settings" size={28} className="text-white" />
+                  </div>
+                  <span className="text-white text-xs font-semibold uppercase tracking-wide">{fn.label}</span>
+                </div>
+                {i < 3 && <div className="w-8 h-0.5 bg-white/50 mb-4 hidden sm:block" />}
+              </div>
+            ))}
+          </div>
+          {/* Description */}
+          <div className="mt-12 flex items-start gap-4 bg-white/10 border border-white/20 rounded-2xl p-6 backdrop-blur-sm">
+            <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0 text-white font-black text-lg">1</div>
+            <p className="text-white/90 text-sm leading-relaxed">
+              Вы получите бренд, который с необходимым минимумом функций будет сразу работать. Мы разработаем удобный сайт, какой нужен вам и который понравится вашим покупателям.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* PORTFOLIO */}
+      <section className="py-24 px-6 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-center text-3xl sm:text-4xl font-black text-foreground mb-16 uppercase tracking-wide">
+            Созданные интернет-магазины и порталы
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {portfolioItems.map((item) => (
+              <div key={item.label} className={`relative rounded-2xl overflow-hidden aspect-video bg-gradient-to-br ${item.color} flex items-end p-4 group cursor-pointer`}>
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                <div className="relative z-10">
+                  <div className="flex gap-1 mb-2">
+                    {[1,2,3].map(i => <div key={i} className="w-4 h-4 rounded-full bg-white/30" />)}
+                  </div>
+                  <div className="space-y-1">
+                    <div className="h-2 rounded bg-white/50 w-3/4" />
+                    <div className="h-2 rounded bg-white/30 w-1/2" />
+                  </div>
+                </div>
+                <div className="absolute top-3 right-3 bg-black/30 backdrop-blur-sm rounded-lg px-2 py-1">
+                  <span className="text-white text-xs font-medium">{item.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center gap-2 mt-8">
+            {[0,1,2,3,4].map(i => (
+              <div key={i} className={`rounded-full transition-all ${i === 0 ? 'w-6 h-2 bg-primary' : 'w-2 h-2 bg-border'}`} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CMS PLATFORM */}
+      <section className="py-24 px-6 bg-card border-y border-border">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-center text-3xl sm:text-4xl font-black text-foreground mb-16 uppercase tracking-wide">
+            Платформа CMS и надёжность ПО
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="flex justify-center">
+              <div className="relative w-64 h-64">
+                <div className="w-full h-full rounded-2xl bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center shadow-2xl shadow-red-900/50">
+                  <div className="text-center">
+                    <div className="text-white text-5xl font-black mb-2">1C</div>
+                    <div className="text-white/80 text-sm font-medium">Битрикс</div>
+                    <div className="mt-3 text-white/60 text-xs">Управление сайтом</div>
+                  </div>
+                </div>
+                <div className="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                  <Icon name="Shield" size={20} className="text-white" />
+                </div>
+              </div>
+            </div>
+            <div className="space-y-5">
+              <p className="text-muted-foreground leading-relaxed">
+                Наши сайты разрабатываются и публикуются на платформе для web-сайтов, порталов и интернет-магазинов — 1С-Битрикс. Эта система давно завоевала лидирующие позиции на рынке.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                PHP, MySQL, 1С-Битрикс — это набор технологий, который является стандартом де-факто для создания корпоративных сайтов.
+              </p>
+              <div className="grid grid-cols-2 gap-4 pt-2">
+                {[
+                  { icon: "Lock", text: "Защита от взлома" },
+                  { icon: "Zap", text: "Высокая скорость" },
+                  { icon: "RefreshCw", text: "Регулярные обновления" },
+                  { icon: "Headphones", text: "Поддержка 24/7" },
+                ].map(item => (
+                  <div key={item.text} className="flex items-center gap-3 p-3 rounded-xl bg-background border border-border">
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <Icon name={item.icon} fallback="Check" size={16} className="text-primary" />
+                    </div>
+                    <span className="text-sm text-foreground font-medium">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CATEGORIES */}
+      <section className="py-24 px-6 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-center text-2xl sm:text-3xl font-black text-foreground mb-4 uppercase leading-tight">
+            Для каких товаров подойдут наши готовые отраслевые решения интернет-магазина?
+          </h2>
+          <p className="text-center text-muted-foreground mb-6 max-w-3xl mx-auto text-sm leading-relaxed">
+            Это отличное решение для любого бизнеса. Мы разрабатываем более 500 сайтов для различных отраслей и помогаем создать интернет-магазин под ключ.
+          </p>
+          <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto text-sm leading-relaxed">
+            Стоимость от 155 000 до 312 000 рублей, в зависимости от выбранного пакета и требований к функционалу.
+          </p>
+          {/* Mock shop banner */}
+          <div className="rounded-2xl overflow-hidden border border-border mb-12 bg-card">
+            <div className="h-3 bg-gradient-to-r from-sky-500 to-blue-600" />
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                    <Icon name="Tv" size={20} className="text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-foreground text-sm">ЭЛЕКТРОШОП</div>
+                    <div className="text-xs text-muted-foreground">electroshop.ru</div>
+                  </div>
+                </div>
+                <div className="hidden sm:flex items-center gap-2 text-xs text-muted-foreground">
+                  <Icon name="Phone" size={14} />
+                  <span>+7 800 000-00-00</span>
+                </div>
+              </div>
+              <div className="grid grid-cols-4 sm:grid-cols-8 gap-3">
+                {categories.map(cat => (
+                  <div key={cat.label} className="flex flex-col items-center gap-1.5 p-2 rounded-xl bg-background border border-border hover:border-primary/40 cursor-pointer transition-colors group">
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Icon name={cat.icon} fallback="Package" size={16} className="text-primary" />
+                    </div>
+                    <span className="text-xs text-muted-foreground text-center leading-tight">{cat.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
